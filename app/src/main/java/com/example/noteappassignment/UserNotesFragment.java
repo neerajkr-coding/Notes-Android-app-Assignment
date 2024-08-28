@@ -47,7 +47,6 @@ public class UserNotesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        fragmentUserNotesBinding.testText.setText(username);
         fragmentUserNotesBinding.logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

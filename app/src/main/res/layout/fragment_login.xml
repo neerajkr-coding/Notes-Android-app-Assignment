@@ -30,7 +30,7 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/font_1"
                 android:textColor="@color/main1"
-                android:text="Your Notes"
+                android:text="Your\nNotes"
                 android:textSize="80sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
