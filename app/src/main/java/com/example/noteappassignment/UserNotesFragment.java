@@ -83,7 +83,7 @@ public class UserNotesFragment extends Fragment implements editButtonHandler {
         recyclerView.setHasFixedSize(true);
 
 
-        MyAdapter adapter = new MyAdapter(noteArrayList, new ViewModelProvider(this).get(MyViewModel.class));
+        MyAdapter adapter = new MyAdapter(noteArrayList, new ViewModelProvider(this).get(MyViewModel.class), requireContext());
 
         adapter.setClickListener(this);
 
@@ -134,6 +134,8 @@ public class UserNotesFragment extends Fragment implements editButtonHandler {
 //        Log.v("addNote", "Button Clicked");
 
         setFragment(new AddNoteFragment(username));
+
+
     }
 
     private void setFragment(Fragment fragment){

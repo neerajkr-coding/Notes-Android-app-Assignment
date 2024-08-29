@@ -2,6 +2,7 @@ package com.example.noteappassignment;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -73,6 +74,21 @@ public class UpdateNoteFragment extends Fragment {
 
         fragmentUpdateNoteBinding.setClickHandler(listener);
 
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                setFragment(new UserNotesFragment(targetNote.getUsername()));
+            }
+        });
+
+    }
+
+    private void setFragment(Fragment fragment){
+
+        FragmentManager fm = requireActivity().getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.frameLayout, fragment);
+        ft.commit();
     }
 
 

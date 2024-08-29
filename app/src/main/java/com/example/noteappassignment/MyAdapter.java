@@ -1,5 +1,7 @@
 package com.example.noteappassignment;
 
+import android.app.AlertDialog;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +18,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.NoteViewHolder>{
 
     ArrayList<Note> noteArrayList;
     MyViewModel myViewModel;
+    Context context;
 
     editButtonHandler clickListener;
 
-    public MyAdapter(ArrayList<Note> noteArrayList, MyViewModel myViewModel) {
+    public MyAdapter(ArrayList<Note> noteArrayList, MyViewModel myViewModel, Context context) {
         this.noteArrayList = noteArrayList;
         this.myViewModel = myViewModel;
+        this.context = context;
     }
 
     public void setClickListener(editButtonHandler clickListener) {
@@ -58,7 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.NoteViewHolder>{
         holder.noteItemBinding.deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myViewModel.delete(currNote);
+                createDialog(currNote);
             }
         });
 
@@ -88,5 +92,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.NoteViewHolder>{
                 clickListener.onClick(view, noteArrayList.get(getAdapterPosition()));
             }
         }
+    }
+
+    public void createDialog(Note note){
+        new AlertDialog.Builder(context)
+                .setTitle("Delete Note")
+                .setMessage("Do you want to delete this note?")
+                .setPositiveButton("Delete", (dialog, which) -> {
+                    myViewModel.delete(note);
+                }).setNegativeButton("Cancel", (dialog, which) -> {
+                    dialog.dismiss();
+                })
+                .create()
+                .show();
     }
 }

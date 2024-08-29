@@ -50,4 +50,5 @@ public class UpdateNoteClickListener {
         ft.replace(R.id.frameLayout, fragment);
         ft.commit();
     }
+
 }
