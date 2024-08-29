@@ -28,6 +28,8 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import java.util.ArrayList;
+
 public class LoginFragment extends Fragment {
 
     private static final int REQ_ONE_TAP = 100;
@@ -141,6 +143,7 @@ public class LoginFragment extends Fragment {
         editor.apply();
 
         Intent i = new Intent(requireContext(), MainActivity.class);
+        i.putExtra("fragNum",0);
         startActivity(i);
     }
 }

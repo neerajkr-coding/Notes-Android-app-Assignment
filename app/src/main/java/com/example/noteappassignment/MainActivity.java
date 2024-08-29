@@ -1,9 +1,11 @@
 package com.example.noteappassignment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,9 +20,10 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.noteappassignment.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding activityMainBinding;
-
 
 
     @Override
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
         Boolean isLogin = loginState.getBoolean("isLogin", false);
         String user = loginState.getString("getUid","User Not found");
+
+
+        Log.v("main", "is login: "+isLogin );
 
 
         if(isLogin){

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="note"
+            type="com.example.noteappassignment.Note" />
+
+        <variable
+            name="clickHandler"
+            type="com.example.noteappassignment.UpdateNoteClickListener" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UpdateNoteFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+
+            <EditText
+                android:id="@+id/getTitle_addNote"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/card_border"
+                android:hint="Enter Title"
+                android:paddingLeft="10dp"
+                android:text="@={note.title}"
+                android:textColor="@color/black"
+                android:textSize="23dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/getContent_addNote"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/card_border"
+                android:gravity="top|start"
+                android:hint="Type note here"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:text="@={note.content}"
+                android:textColor="@color/black"
+                android:textSize="23dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/getTitle_addNote"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/getTitle_addNote" />
+
+            <ImageButton
+                android:id="@+id/addtheNodeBtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@null"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="7dp"
+                android:backgroundTint="@color/black"
+                android:onClick="@{clickHandler::updateNoteClicked}"
+                android:scaleType="centerCrop"
+                android:src="@drawable/update"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/getTitle_addNote"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </FrameLayout>
+
+</layout>
+

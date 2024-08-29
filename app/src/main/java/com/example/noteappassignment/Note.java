@@ -23,6 +23,10 @@ public class Note {
     public Note() {
     }
 
+    public Note(String username) {
+        this.username = username;
+    }
+
     public Note(String username, String title, String content) {
         this.username = username;
         this.title = title;
@@ -31,6 +35,10 @@ public class Note {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {

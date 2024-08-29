@@ -1,6 +1,7 @@
 package com.example.noteappassignment;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.room.Database;
 import androidx.room.Room;
@@ -15,6 +16,8 @@ public abstract class NoteDatabase extends RoomDatabase {
     //Get singleton instance of the database
     public static NoteDatabase dbInstance;
     public static NoteDatabase getDbInstance(Context context) {
+
+        Log.v("database","Database called");
 
         if(dbInstance == null){
             dbInstance = Room.databaseBuilder(context.getApplicationContext(),
