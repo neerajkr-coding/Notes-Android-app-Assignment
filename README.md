@@ -8,7 +8,7 @@ https://github.com/user-attachments/assets/b5b01cf8-9f81-4d7e-bdb9-31f6bd4e682a
 ## Overview
 This assignment involves designing and developing a simple Notes Android app with the following features:
 
-1. **Single Activity Design:** The app uses only **one activity**, screens implemented **multiple fragments**.
+1. **Single Activity Design:** The app uses only **one activity**, screens implemented using **multiple fragments**.
 2. **Login Screen:** Users are prompted to log in using **Gmail**. The app tracks logged-in users using **SharedPreferences**.
 3. **Notes Display:** Once logged in, users see all their notes displayed in a **RecyclerView**.
 4. **Note Management:** Users can **add, update, and delete** notes.
