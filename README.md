@@ -5,6 +5,8 @@ https://github.com/user-attachments/assets/b5b01cf8-9f81-4d7e-bdb9-31f6bd4e682a
 
 # Notes Android App
 
+Tech Stack: Java · SQLite · ROOM DB · Live Data · Android Data Binding · Model-view-viewmodel (MVVM) · Google Authentication
+
 ## Overview
 This assignment involves designing and developing a simple Notes Android app with the following features:
 
